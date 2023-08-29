@@ -1,0 +1,45 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\university-management-auth-service\\logs\\winston\\success\\.cef4e1cf1c758243068b4563f15d24c70051205d-audit.json",
+    "files": [
+        {
+            "date": 1692575892328,
+            "name": "D:\\university-management-auth-service\\logs\\winston\\success\\success-2023-08-21-05.log",
+            "hash": "ce51169c6f1f87b845821567d07c26519659b11eceb1257d40e6b8610e9f3950"
+        },
+        {
+            "date": 1692578838370,
+            "name": "D:\\university-management-auth-service\\logs\\winston\\success\\success-2023-08-21-06.log",
+            "hash": "7f6eaa25cd9ed215bfd3369e65d5aa4dda9d95be426a76d2950d278b7a0dbb0b"
+        },
+        {
+            "date": 1692582656272,
+            "name": "D:\\university-management-auth-service\\logs\\winston\\success\\success-2023-08-21-07.log",
+            "hash": "215b414ee56e1d6cea477ecbaa35a3b05d221dbbe32386934313e5cad601d6c3"
+        },
+        {
+            "date": 1692583503901,
+            "name": "D:\\university-management-auth-service\\logs\\winston\\success\\success-2023-08-21-08.log",
+            "hash": "8614aef0a7078310ad2042cb1b35b6a29e397339d9b4052d25efa30d28369e60"
+        },
+        {
+            "date": 1692625331437,
+            "name": "D:\\university-management-auth-service\\logs\\winston\\success\\success-2023-08-21-19.log",
+            "hash": "c44ae4325d81a7004f855f7f2d3e1239112a5369f8c5c12e82cf61e704685dab"
+        },
+        {
+            "date": 1692626694343,
+            "name": "D:\\university-management-auth-service\\logs\\winston\\success\\success-2023-08-21-20.log",
+            "hash": "265a6b898ada6d0b7b6fb5293ee712451447c723e2b3603531505bd4c93cc60a"
+        },
+        {
+            "date": 1693317193420,
+            "name": "D:\\university-management-auth-service\\logs\\winston\\success\\success-2023-08-29-19.log",
+            "hash": "156fca62c027c7adab55fcb559d00bec7451f3532bbedc251ce8a0693d343888"
+        }
+    ],
+    "hashType": "sha256"
+}

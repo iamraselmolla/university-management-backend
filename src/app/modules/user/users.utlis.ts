@@ -10,4 +10,4 @@ const generateUserId = async () => {
   const incrementId = (parseInt(currentId) + 1).toString().padStart(5, '0')
   return incrementId;
 }
-export default generateUserId
+export default generateUserId;
