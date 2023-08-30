@@ -1,5 +1,5 @@
 import cors from 'cors'
-import express, { Application } from 'express'
+import express, { Application, Request, Response } from 'express'
 import globalErrorHandler from './app/modules/user/middlewars/globarErrorHandlers'
 import userRouter from './app/modules/user/users.route'
 const app: Application = express()
@@ -15,13 +15,13 @@ app.use(express.urlencoded({ extended: true }))
 
 
 //Testing
-// app.get('/', async (req: Request, res: Response) => {
- 
-//   throw new ApiError(400, 'Generic Error,')
-// })
+app.get('/',  (req: Request, res: Response) => {
 
-app.use(globalErrorHandler)
+    Promise.reject(new Error('Ami ki korbo'))
+})
+
 
 app.use('/api/v1/users/', userRouter)
+app.use(globalErrorHandler)
 
 export default app
