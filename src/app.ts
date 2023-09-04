@@ -1,5 +1,5 @@
 import cors from 'cors'
-import express, { Application, Request, Response } from 'express'
+import express, { Application, NextFunction, Request, Response } from 'express'
 import globalErrorHandler from './app/modules/user/middlewars/globarErrorHandlers'
 import userRouter from './app/modules/user/users.route'
 const app: Application = express()
@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: true }))
 
 
 //Testing
-app.get('/',  (req: Request, res: Response) => {
+app.get('/', async (req: Request, res: Response, next: NextFunction) => {
 
-    Promise.reject(new Error('Ami ki korbo'))
+    throw new Error("Error dichi kintu ekta")
 })
 
 

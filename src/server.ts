@@ -4,6 +4,10 @@ import app from './app'
 import config from './config/index'
 import loggerAction from './share/logger'
 
+process.on("uncaughtException", (err) => {
+  loggerAction.Errorlogger.error(err)
+  process.exit(1)
+})
 let server: Server;
 async function boostrap() {
 
@@ -30,5 +34,11 @@ process.on("unhandledRejection", (error) => {
     process.exit(1)
   }
 })
-
 boostrap()
+
+process.on("SIGTERM", (err) => {
+  loggerAction.logger.info('SIGTERM is received')
+  if (server) {
+    server.close()
+  }
+})
