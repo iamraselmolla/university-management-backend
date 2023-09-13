@@ -1,8 +1,10 @@
 import { ErrorRequestHandler } from "express";
+import { ZodError } from "zod";
 import config from "../../../../config";
 import { IgenericErrorMessage } from "../../interfaces/errorInterface";
 import { handleValidationError } from "../../interfaces/handleErrors";
 import ApiError from "./ApiErrorHandler";
+import handleZodError from "./errors/handleZodErrors";
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
     let statusCode = 501;
@@ -16,7 +18,15 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
         message = simplefiedError.message
         errorMessage = simplefiedError.errorMessage
 
-    } else if (err instanceof ApiError) {
+    } else if (err instanceof ZodError) {
+        const simplefiedError = handleZodError(err)
+        statusCode = simplefiedError.statusCode;
+        message = simplefiedError.message;
+        errorMessage = simplefiedError.errorMessage
+    }
+
+
+    else if (err instanceof ApiError) {
         console.log("ekhane error hoyeche")
         statusCode = err?.statusCode
         message = err?.message
