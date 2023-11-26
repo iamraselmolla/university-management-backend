@@ -10,4 +10,7 @@ const router = express.Router();
 
 router.post('/create-semester', validateRequest(academicSemesterValidation.academicSemesterZodSchema), academicServiceController.createSemester);
 
+
+router.get('/', academicServiceController.getAllSemesters)
+
 export const semesterRoutes = router

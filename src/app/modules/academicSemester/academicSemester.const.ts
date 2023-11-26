@@ -4,3 +4,12 @@ export const academicSemesterMonths: Month[] = ['January', 'February', 'March', 
 
 export const academicSemesterTitles: academicSemesterTitle[] = ['Autumn', 'Summer', 'Fall'];
 export const academicSemesterCodes: academicSemesterCode[] = ['01', '02', '03']
+
+
+export const academicSemesterTitleCodeMapper: {
+    [key: string]: string;
+} = {
+    Autumn: '01',
+    Summer: '02',
+    Fall: '03',
+};

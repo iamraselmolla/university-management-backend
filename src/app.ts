@@ -1,8 +1,8 @@
 import cors from 'cors'
 import express, { Application, NextFunction, Request, Response } from 'express'
-import { semesterRoutes } from './app/modules/academicSemester/academicSemester.route'
+import httpStatus from 'http-status'
 import globalErrorHandler from './app/modules/user/middlewars/globarErrorHandlers'
-import userRouter from './app/modules/user/users.route'
+import router from './app/routes'
 const app: Application = express()
 
 app.use(cors())
@@ -15,15 +15,21 @@ app.use(express.urlencoded({ extended: true }))
 
 
 
-//Testing
-app.get('/', async (req: Request, res: Response, next: NextFunction) => {
+app.use('/api/v1', router)
+app.use(globalErrorHandler);
+app.use((req: Request, res: Response, next: NextFunction) => {
+    res.status(httpStatus.NOT_FOUND).json({
+        success: false,
+        message: 'Not found',
+        errorMessages: [
+            {
+                path: req.originalUrl,
+                message: 'API Not Found'
+            }
+        ]
 
-    throw new Error("Error dichi kintu ekta")
+    });
+    next()
 })
-
-
-app.use('/api/v1/users/', userRouter)
-app.use('/api/v1/academic-semester/', semesterRoutes)
-app.use(globalErrorHandler)
 
 export default app

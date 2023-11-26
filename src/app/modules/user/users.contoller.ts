@@ -1,5 +1,7 @@
 import { RequestHandler } from "express";
+import httpStatus from "http-status";
 import { z } from "zod";
+import sendResponse from "../../../share/sendResponse";
 import { UserService } from "./users.service";
 const createUser: RequestHandler = async (req, res, next) => {
     try {
@@ -14,13 +16,11 @@ const createUser: RequestHandler = async (req, res, next) => {
         await userZodSchema.parseAsync(req)
         const { user } = req.body
         const result = await UserService.createUser(user);
-        res.status(200).json({
-            success: true,
-            message: "User created successfully",
-            data: result
-        })
+        sendResponse(res, { success: true, message: 'User created successfully', data: result, statusCode: httpStatus.OK })
+        next()
     } catch (err) {
         next(err)
     }
 }
+
 export const UserController = { createUser };
