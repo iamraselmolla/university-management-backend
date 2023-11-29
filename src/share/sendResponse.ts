@@ -5,23 +5,30 @@ type IapiResponse<T> = {
     statusCode: number;
     success: boolean;
     message?: string | null;
-    data: T;
-    meta: {
+    data?: T;
+    meta?: {
         page: number;
         limit: number;
         total: number;
     }
 }
-const sendResponse = <T>(res: Response, data: IapiResponse<T>): void => {
-
-    const responseData: IapiResponse<T> = {
-        statusCode: data.statusCode,
+function sendResponse<T>(res: Response, data: {
+    statusCode: number;
+    success: boolean;
+    message: string;
+    meta?: {
+        page?: number;
+        limit?: number;
+        total?: number;
+    };
+    data: T;
+}): void {
+    res.status(data.statusCode).json({
         success: data.success,
+        message: data.message,
+        meta: data.meta,
         data: data.data,
-        message: data.message || null,
-        meta: data?.meta || null
-    }
-    res.status(data.statusCode).json(responseData)
+    });
 }
 
 
