@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\Md Rasel Molla\\Desktop\\university-management-backend\\logs\\winston\\error\\.f40fee879734efdc620211b8a3ec1abb05c2dcf3-audit.json",
+    "files": [
+        {
+            "date": 1701624205069,
+            "name": "C:\\Users\\Md Rasel Molla\\Desktop\\university-management-backend\\logs\\winston\\error\\error-2023-12-03-23.log",
+            "hash": "77e751093a9e881b43b10fd1358ba0a93b307ff0663691406e13539bc57d07fd"
+        },
+        {
+            "date": 1701712003469,
+            "name": "C:\\Users\\Md Rasel Molla\\Desktop\\university-management-backend\\logs\\winston\\error\\error-2023-12-04-23.log",
+            "hash": "4c23be297424e2db900a302b020738932859e43140eac9e2ba6a71dce81b825d"
+        },
+        {
+            "date": 1701714696968,
+            "name": "C:\\Users\\Md Rasel Molla\\Desktop\\university-management-backend\\logs\\winston\\error\\error-2023-12-05-00.log",
+            "hash": "2bbf05b868c5db0bcc5c6aeb07b95cbb4917325647921b8300f6c546ed320008"
+        },
+        {
+            "date": 1701800550502,
+            "name": "C:\\Users\\Md Rasel Molla\\Desktop\\university-management-backend\\logs\\winston\\error\\error-2023-12-06-00.log",
+            "hash": "51817408fce630dde60c89e0e77ef7ec27d070ae7847e91b52c7d1d55622f81b"
+        },
+        {
+            "date": 1701887234271,
+            "name": "C:\\Users\\Md Rasel Molla\\Desktop\\university-management-backend\\logs\\winston\\error\\error-2023-12-07-00.log",
+            "hash": "521785fa1ddf229fa0356a183324700fd289c69a2cae6689d4f5beddd439f9e4"
+        }
+    ],
+    "hashType": "sha256"
+}

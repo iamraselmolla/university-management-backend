@@ -31,8 +31,9 @@ const getAllSemesters: RequestHandler = catchAsyncFunction(async (req: Request, 
 
     const paginationOptions = pick(req.query, paginationField)
 
-
-    const result = await academicSemesterService.getAllSemesters(paginationOptions);
+const filters = pick(req.query, ['searchTerm'])
+    const result = await academicSemesterService.getAllSemesters(filters
+        ,paginationOptions);
     sendResponse<IAcademicSemester[]>(res,
         {
             statusCode: httpStatus.OK,
