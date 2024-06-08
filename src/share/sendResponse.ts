@@ -26,8 +26,8 @@ function sendResponse<T>(res: Response, data: {
     res.status(data.statusCode).json({
         success: data.success,
         message: data.message,
-        meta: data.meta,
-        data: data.data,
+        meta: data.meta || null || undefined,
+        data: data.data || null || undefined,
     });
 }
 

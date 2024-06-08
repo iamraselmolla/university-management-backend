@@ -59,7 +59,7 @@ const getAllSemesters = async (filters: { searchTerm: string },
         data: result
     }
 }
-const getSingleSemester = async (id: string) => {
+const getSingleSemester = async (id: string): Promise<IAcademicSemester | null> => {
     const result = AcademicSemester.findById(id)
     return result;
 }
