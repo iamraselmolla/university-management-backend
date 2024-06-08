@@ -11,6 +11,7 @@ const router = express.Router();
 router.post('/create-semester', validateRequest(academicSemesterValidation.academicSemesterZodSchema), academicServiceController.createSemester);
 
 
+router.patch('/:id', academicServiceController.updateSemester)
 router.get('/', academicServiceController.getAllSemesters)
 router.get('/:id', academicServiceController.getSingleSemester);
 
