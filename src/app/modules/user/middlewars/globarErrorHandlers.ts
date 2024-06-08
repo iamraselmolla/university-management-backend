@@ -4,6 +4,7 @@ import config from "../../../../config";
 import { IgenericErrorMessage } from "../../interfaces/errorInterface";
 import { handleValidationError } from "../../interfaces/handleErrors";
 import ApiError from "./ApiErrorHandler";
+import handleCastError from "./errors/handleCastError";
 import handleZodError from "./errors/handleZodErrors";
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
@@ -38,6 +39,16 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
         ] : [
 
         ]
+    } else if (err.name === 'CastError') {
+        const simplefiedError = handleCastError(err)
+        statusCode = simplefiedError?.statusCode
+        message = simplefiedError?.message
+        errorMessage = simplefiedError?.message ? [
+            {
+                path: '',
+                message: simplefiedError?.message
+            }
+        ] : []
     }
 
 

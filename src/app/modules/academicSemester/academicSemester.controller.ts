@@ -58,7 +58,7 @@ const getSingleSemester = catchAsyncFunction(async (req: Request, res: Response,
 
         });
     next()
-})
+}) 
 export const academicServiceController = {
     createSemester,
     getAllSemesters,
