@@ -4,9 +4,6 @@ import ApiError from '../user/middlewars/ApiErrorHandler';
 import { academicSemesterCodes, academicSemesterMonths, academicSemesterTitles } from './academicSemester.const';
 import { AcademicSemesterModel, IAcademicSemester } from './academicSemester.interface';
 
-
-
-
 const academicSemesterSchema = new Schema<IAcademicSemester>(
     {
         title: {
@@ -15,7 +12,7 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
             enum: academicSemesterTitles
         },
         year: {
-            type: Number,
+            type: String,
             required: true,
         },
         code: {
