@@ -27,7 +27,7 @@ function sendResponse<T>(res: Response, data: {
         success: data.success,
         message: data.message,
         meta: data.meta || null || undefined,
-        data: data.data || null || undefined,
+        data: data.data || null,
     });
 }
 
