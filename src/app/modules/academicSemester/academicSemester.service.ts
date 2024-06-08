@@ -59,8 +59,12 @@ const getAllSemesters = async (filters: { searchTerm: string },
         data: result
     }
 }
-
+const getSingleSemester = async (id: string) => {
+    const result = AcademicSemester.findById(id)
+    return result;
+}
 export const academicSemesterService = {
     createSemester,
-    getAllSemesters
+    getAllSemesters,
+    getSingleSemester
 }
