@@ -24,7 +24,7 @@ const createSemester: RequestHandler = catchAsyncFunction(async (req: Request, r
         }
     )
 
-    next();
+
 });
 
 
@@ -42,7 +42,6 @@ const getAllSemesters: RequestHandler = catchAsyncFunction(async (req: Request, 
             meta: result.meta,
             data: result.data,
         });
-    next()
 })
 
 const getSingleSemester = catchAsyncFunction(async (req: Request, res: Response, next: NextFunction) => {
@@ -57,7 +56,6 @@ const getSingleSemester = catchAsyncFunction(async (req: Request, res: Response,
             data: result
 
         });
-    next()
 })
 
 const updateSemester = catchAsyncFunction(async (req: Request, res: Response, next: NextFunction) => {
@@ -73,7 +71,6 @@ const updateSemester = catchAsyncFunction(async (req: Request, res: Response, ne
             data: result
 
         });
-    next()
 })
 export const academicServiceController = {
     createSemester,

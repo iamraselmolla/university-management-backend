@@ -17,7 +17,6 @@ const createUser: RequestHandler = async (req, res, next) => {
         const { user } = req.body
         const result = await UserService.createUser(user);
         sendResponse(res, { success: true, message: 'User created successfully', data: result, statusCode: httpStatus.OK })
-        next()
     } catch (err) {
         next(err)
     }
