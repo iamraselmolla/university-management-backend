@@ -2,14 +2,13 @@ import config from "../../../config";
 import ApiError from "./middlewars/ApiErrorHandler";
 import { IUser } from "./users.interface";
 import { User } from "./users.model";
-import generateUserId from "./users.utlis";
-// import { generateUserId } from "./users.utlis";
+import { generateStudentId } from "./users.utlis";
 
 
 
 
 const createUser = async (user: IUser): Promise<IUser | null> => {
-  const id = await generateUserId();
+  const id = await generateStudentId();
   user.id = id;
   if (!user.password) {
     user.password = config.student_pass as string
