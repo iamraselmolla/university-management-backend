@@ -8,7 +8,12 @@ import { generateStudentId } from "./users.utlis";
 
 
 const createUser = async (user: IUser): Promise<IUser | null> => {
-  const id = await generateStudentId();
+  const academicSemster = {
+    code: "01",
+    year: "2025",
+    
+  }
+  const id = await generateStudentId(academicSemster);
   user.id = id;
   if (!user.password) {
     user.password = config.student_pass as string

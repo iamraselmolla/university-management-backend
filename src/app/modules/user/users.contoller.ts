@@ -14,7 +14,7 @@ const createUser: RequestHandler = async (req, res, next) => {
             })
         });
         await userZodSchema.parseAsync(req)
-        const { user } = req.body
+        const { ...user } = req.body
         const result = await UserService.createUser(user);
         sendResponse(res, { success: true, message: 'User created successfully', data: result, statusCode: httpStatus.OK })
     } catch (err) {
