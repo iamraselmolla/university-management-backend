@@ -17,9 +17,9 @@ export const generateStudentId = async (academicSemester: IAcademicSemester): Pr
 
 
 // Faculty
-const findLastFacultyId = async () => {
+const findLastFacultyId = async (): Promise<string | undefined> => {
   const userId = await User.findOne({ role: "faculty" }, { id: 1, _id: 0 }).sort({ createdAt: -1 }).lean();
-  return userId?.id;
+  return userId?.id ? userId?.id.substring(2) : undefined
 }
 export const generateFacultyId = async (): Promise<string | undefined> => {
   const lastFacultyId = await findLastFacultyId()
