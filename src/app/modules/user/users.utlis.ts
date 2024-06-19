@@ -3,7 +3,6 @@ import { User } from "./users.model";
 
 const findLastStudentUserId = async (): Promise<string | undefined> => {
   const userId = await User.findOne({ role: "student" }, { id: 1, _id: 0 }).sort({ createdAt: -1 }).lean();
-  console.log(userId)
   return userId?.id ? userId.id.substring(4) : undefined;
 }
 
