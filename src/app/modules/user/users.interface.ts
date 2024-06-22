@@ -1,5 +1,10 @@
+import { Types } from "mongoose"
+
 export type IUser = {
-    id: string
-    role: string
-    password: string
-  }
+  id: string
+  role: string
+  password: string,
+  student: Types.ObjectId | Istudent,
+  faculty: Types.ObjectId | IFacultyt,
+  admin: Types.ObjectId | IAdmin,
+}
